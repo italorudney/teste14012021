@@ -4,7 +4,14 @@ use Psr\Http\Message\ServerRequestInterface as Request;
 
 require __DIR__ . '/./vendor/autoload.php';
 
-$app = new \Slim\App();
+$configuration = [
+    'settings' => [
+        'displayErrorDetails' => true,
+    ],
+];
+$c = new \Slim\Container($configuration);
+
+$app = new \Slim\App($c);
 
 
 $app->get('/veiculos', function (Request $request, Response $response, array $args) {
