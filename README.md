@@ -31,9 +31,11 @@ que dados recebe e quais dados retorna.<br>
 <br><hr><br>
 <h2>Rotas:</h2>
 
+Existe um arquivo na raiz do projeto chamado "Insomnia_2021-01-16.json" com o exemplo de todas as rotas<br>
+
 <h3>GET - \veiculo:</h3> * O sistema vai retornar a listagem de todos os veiculos cadastrados na base de dados.
 <h3>POST - \veiculo:</h3> * O sistema vai tentar inserir um novo veiculo disponivel, no banco de dados.<br>
-Exemplo:<br>
+Exemplo de envio de dados em formato JSON:<br>
 {<br>
 	"vei_descricao":"FOCUS 1.6 16V",<br>
 	"vei_marca":"FORD",<br>
@@ -41,24 +43,60 @@ Exemplo:<br>
 	"vei_chassi":"JADHGIUSAGD",<br>
 	"vei_cor":"PRETO"<br>
 }<br>
-O sistema irá retornar a mensagem de sucesso ou os erros que o mesmo encontrou ambos em JSON.<br><br>
+O sistema irá retornar a mensagem de sucesso ou os erros que o mesmo encontrou ambos, em formato em JSON.<br><br>
 
 <h3>PUT - \veiculo:</h3> * O sistema vai tentar atualizar um veiculo existente no banco de dados através da id passada.<br>
-Exemplo:<br>
+Exemplo de envio de dados em formato JSON:<br>
 {<br>
 	"vei_descricao":"FOCUS 1.6 16V",<br>
 	"vei_marca":"FORD",<br>
 	"vei_placa":"ABC-123",<br>
 	"vei_chassi":"JADHGIUSAGD",<br>
 	"vei_cor":"PRETO",<br>
-	"vei_id":"PRETO"<br>
+	"vei_id":"1"<br>
 }<br>
-O sistema irá retornar a mensagem de sucesso ou os erros que o mesmo encontrou ambos em JSON.<br><br>
-<h3>DELETE - \veiculo:</h3>
+O sistema irá retornar a mensagem de sucesso ou os erros que o mesmo encontrou ambos, em formato em JSON.<br><br>
 
-GET
-POST
-PUT
-DELETE
+<h3>DELETE - \veiculo:</h3> * O sistema vai tentar excluir um veiculo existente no banco de dados através da id passada.<br>
+Exemplo de envio de dados em formato JSON:<br>
+{<br>
+	"vei_id":"1"<br>
+}<br>
+O sistema irá retornar a mensagem de sucesso ou os erros que o mesmo encontrou ambos, em formato JSON.<br><br>
 
-POST
+<h3>GET - \pessoa:</h3> * O sistema vai retornar a listagem de todos as pessoas cadastradas na base de dados.
+<h3>POST - \pessoa:</h3> * O sistema vai tentar inserir uma nova pessoa disponivel, no banco de dados.<br>
+Exemplo de envio de dados em formato JSON:<br>
+{<br>
+	"per_nome":"João Silva",<br>
+	"per_contato":"99999999999",<br>
+	"per_cpf_cnpj":"111.111.111-11"<br>
+}<br>
+O sistema irá retornar a mensagem de sucesso ou os erros que o mesmo encontrou ambos, em formato em JSON.<br><br>
+
+<h3>PUT - \pessoa:</h3> * O sistema vai tentar atualizar uma pessoa existente no banco de dados através da id passada.<br>
+Exemplo de envio de dados em formato JSON:<br>
+{<br>
+	"per_nome":"João Silva",<br>
+	"per_contato":"99999999999",<br>
+	"per_cpf_cnpj":"111.111.111-11"<br>
+	"per_id":"1"<br>
+}<br>
+O sistema irá retornar a mensagem de sucesso ou os erros que o mesmo encontrou ambos, em formato em JSON.<br><br>
+
+<h3>DELETE - \pessoa:</h3> * O sistema vai tentar excluir uma pessoa existente no banco de dados através da id passada.<br>
+Exemplo de envio de dados em formato JSON:<br>
+{<br>
+	"per_id":"1"<br>
+}<br>
+O sistema irá retornar a mensagem de sucesso ou os erros que o mesmo encontrou ambos, em formato JSON.<br><br>
+
+<h3>POST - \aluguel:</h3> * O sistema vai tentar alugar um veiculo disponivel, no banco de dados.<br>
+Exemplo de envio de dados em formato JSON:<br>
+{<br>
+	"per_id":"1",<br>
+	"vei_id":"1"<br>
+}<br>
+O sistema irá retornar a mensagem de sucesso ou os erros que o mesmo encontrou ambos, em formato em JSON.<br><br>
+
+
