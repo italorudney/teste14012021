@@ -6,6 +6,7 @@ use Psr\Http\Message\ServerRequestInterface as Request;
 use Psr\Http\Message\ResponseInterface as Response;
 use App\DAO\VeiculosDAO;
 use App\Models\VeiculoModel;
+use App\Models\PessoaModel;
 use Slim\Container;
 
     final class VeiculoController
