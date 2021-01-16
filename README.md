@@ -31,7 +31,7 @@ que dados recebe e quais dados retorna.<br>
 <br><hr><br>
 <h2>Rotas:</h2>
 
-Existe um arquivo na raiz do projeto chamado "Insomnia_2021-01-16.json" com o exemplo de todas as rotas<br>
+Existe um arquivo na raiz do projeto chamado "Insomnia_2021-01-16.json" com o exemplo de todas as rotas, ele pode ser importado para o programa Insomnia<br>
 
 <h3>GET - \veiculo:</h3> * O sistema vai retornar a listagem de todos os veiculos cadastrados na base de dados.
 <h3>POST - \veiculo:</h3> * O sistema vai tentar inserir um novo veiculo disponivel, no banco de dados.<br>
