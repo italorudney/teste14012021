@@ -16,6 +16,7 @@ $app->group('', function () use ($app) {
     $app->get('/veiculo', VeiculoController::class . ':getVeiculos');
     $app->post('/veiculo', VeiculoController::class . ':insertVeiculo');
     $app->put('/veiculo', VeiculoController::class . ':updateVeiculo');
+    $app->delete('/veiculo', VeiculoController::class . ':deleteVeiculo');
     $app->post('/aluguel', VeiculoController::class . ':alugaVeiculo');
 
     $app->get('/pessoa', PessoaController::class . ':getPessoas');

@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-final class PessoaModel
+class PessoaModel
 {
 
     private $per_id;
