@@ -2,7 +2,8 @@
 
 namespace App\Models;
 
-final class VeiculoModel
+
+ class VeiculoModel
 {
 
     private $vei_id;

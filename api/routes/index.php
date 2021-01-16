@@ -5,7 +5,6 @@ use function src\slimConfiguration;
 use App\Controllers\{
     VeiculoController,
     PessoaController,
-    ExceptionController
 };
 
 
@@ -26,7 +25,6 @@ $app->group('', function () use ($app) {
 
 
 });
-$app->get('/exception-test', ExceptionController::class . ':test');
 
 $app->run();
 

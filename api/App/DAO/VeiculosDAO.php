@@ -19,6 +19,14 @@ class VeiculosDAO extends Conexao
         return $veiculos;
     }
 
+    public function getVeiculo(string $field, string $value): array
+    {
+        $veiculos = $this->pdo
+            ->query("SELECT * FROM loc_veiculos WHERE {$field}={$value}")
+            ->fetchAll(\PDO::FETCH_ASSOC);
+        return $veiculos;
+    }
+
     public function insertVeiculo(VeiculoModel $veiculo): void
     {
         $statement = $this->pdo

@@ -6,15 +6,18 @@ use Psr\Http\Message\ServerRequestInterface as Request;
 use Psr\Http\Message\ResponseInterface as Response;
 use App\DAO\PessoasDAO;
 use App\Models\PessoaModel;
+use App\Controllers\Validate;
 use Slim\Container;
 
-    final class PessoaController
+    final class PessoaController extends PessoaModel
     {
         private $pessoasDAO;
+        private $validate;
 
         public function __construct(Container $container)
         {
             $this->pessoasDAO = $container->offsetGet(PessoasDAO::class);
+            $this->validate = new Validate();
         }
         public function getPessoas(Request $request, Response $response, array $args): Response
         {
@@ -34,11 +37,14 @@ use Slim\Container;
         public function insertPessoa(Request $request, Response $response, array $args): Response
         {
             $data = $request->getParsedBody();
-            $pessoa = new PessoaModel();
-            $pessoa->setPer_nome($data['per_nome'])
+            $this->validate->required(['per_nome','per_contato','per_cpf_cnpj'], $data);
+            if (count($this->validate->getErrors()) > 0) {
+                return $this->validate->trataError($response);
+            }
+            $this->setPer_nome($data['per_nome'])
                 ->setPer_contato($data['per_contato'])
                 ->setPer_cpf_cnpj($data['per_cpf_cnpj']);
-            $this->pessoasDAO->insertPessoa($pessoa);
+            $this->pessoasDAO->insertPessoa($this);
     
             $response = $response->withJson([
                 'message' => 'Pessoa inserida com sucesso!'
@@ -50,13 +56,15 @@ use Slim\Container;
         public function updatePessoa(Request $request, Response $response, array $args): Response
         {
             $data = $request->getParsedBody();
-
-            $pessoa = new PessoaModel();
-            $pessoa->setPer_id((int)$data['per_id'])
+            $this->validate->required(['per_nome','per_contato','per_cpf_cnpj','per_id'], $data);
+            if (count($this->validate->getErrors()) > 0) {
+                return $this->validate->trataError($response);
+            }
+            $this->setPer_id((int)$data['per_id'])
                 ->setPer_nome($data['per_nome'])
                 ->setPer_contato($data['per_contato'])
                 ->setPer_cpf_cnpj($data['per_cpf_cnpj']);
-            $this->pessoasDAO->updatePessoa($pessoa);
+            $this->pessoasDAO->updatePessoa($this);
     
             $response = $response->withJson([
                 'message' => 'Pessoa alterada com sucesso!'
@@ -68,7 +76,10 @@ use Slim\Container;
         public function deletePessoa(Request $request, Response $response, array $args): Response
         {
             $data = $request->getParsedBody();
-    
+            $this->validate->required(['per_id'], $data);
+            if (count($this->validate->getErrors()) > 0) {
+                return $this->validate->trataError($response);
+            }
             $id = (int)$data['per_id'];
             $this->pessoasDAO->deletePessoa($id);
     
