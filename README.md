@@ -31,18 +31,29 @@ que dados recebe e quais dados retorna.<br>
 <br><hr><br>
 <h2>Rotas:</h2>
 
-<h3>GET - \veiculo:</h3> * Irá retornar a listagem de todos os veiculos cadastrados na base de dados.
-<h3>POST - \veiculo:</h3> * Irá tentar inserir um novo veiculo disponivel no banco de dados.
-Exemplo:
-{
-	"vei_descricao":"FOCUS 1.6 16V",
-	"vei_marca":"FORD",
-	"vei_placa":"ABC-123",
-	"vei_chassi":"JADHGIUSAGD",
-	"vei_cor":"PRETO"
-}
-O sistema irá retornar a mensagem de sucesso ou os erros que o mesmo encontrou ambos em JSON.
-<h3>PUT - \veiculo:</h3>
+<h3>GET - \veiculo:</h3> * O sistema vai retornar a listagem de todos os veiculos cadastrados na base de dados.
+<h3>POST - \veiculo:</h3> * O sistema vai tentar inserir um novo veiculo disponivel, no banco de dados.<br>
+Exemplo:<br>
+{<br>
+	"vei_descricao":"FOCUS 1.6 16V",<br>
+	"vei_marca":"FORD",<br>
+	"vei_placa":"ABC-123",<br>
+	"vei_chassi":"JADHGIUSAGD",<br>
+	"vei_cor":"PRETO"<br>
+}<br>
+O sistema irá retornar a mensagem de sucesso ou os erros que o mesmo encontrou ambos em JSON.<br><br>
+
+<h3>PUT - \veiculo:</h3> * O sistema vai tentar atualizar um veiculo existente no banco de dados através da id passada.<br>
+Exemplo:<br>
+{<br>
+	"vei_descricao":"FOCUS 1.6 16V",<br>
+	"vei_marca":"FORD",<br>
+	"vei_placa":"ABC-123",<br>
+	"vei_chassi":"JADHGIUSAGD",<br>
+	"vei_cor":"PRETO",<br>
+	"vei_id":"PRETO"<br>
+}<br>
+O sistema irá retornar a mensagem de sucesso ou os erros que o mesmo encontrou ambos em JSON.<br><br>
 <h3>DELETE - \veiculo:</h3>
 
 GET
