@@ -71,4 +71,15 @@ class VeiculosDAO extends Conexao
             'vei_id' => $vei_id
         ]);
     }
+    public function alugarVeiculo(int $vei_id,int $per_id): void
+    {
+        $statement = $this->pdo
+            ->prepare('UPDATE loc_veiculos SET vei_status = "U" WHERE vei_id = :vei_id;
+                INSERT INTO loc_clientes (`per_id`, `vei_id`) VALUES (:per_id, :vei_id);
+            ');
+        $statement->execute([
+            'vei_id' => $vei_id,
+            'per_id' => $per_id
+        ]);
+    }
 }

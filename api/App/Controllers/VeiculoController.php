@@ -83,4 +83,20 @@ use Slim\Container;
     
             return $response;
         }
+        public function alugaVeiculo(Request $request, Response $response, array $args): Response
+        {
+        
+            $data = $request->getParsedBody();
+    
+            $vei_id = (int)$data['vei_id'];
+            $per_id = (int)$data['per_id'];
+            $this->veiculosDAO->alugarVeiculo($vei_id,$per_id);
+    
+            $response = $response->withJson([
+                'message' => 'Veiculo Alugado com sucesso!'
+            ]);
+    
+            return $response;
+
+        }
     }
