@@ -29,7 +29,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => '8a47a5363484c0f0a6d26a5528af637771f76bd7',
+    'reference' => '18686690ea2fda97d434a5b55b9c19f71729cd6a',
     'name' => '__root__',
   ),
   'versions' => 
@@ -41,7 +41,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => '8a47a5363484c0f0a6d26a5528af637771f76bd7',
+      'reference' => '18686690ea2fda97d434a5b55b9c19f71729cd6a',
     ),
     'fig/http-message-util' => 
     array (
@@ -60,6 +60,15 @@ private static $installed = array (
       array (
       ),
       'reference' => '181d480e08d9476e61381e04a71b34dc0432e812',
+    ),
+    'pimple/pimple' => 
+    array (
+      'pretty_version' => 'v3.3.1',
+      'version' => '3.3.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '21e45061c3429b1e06233475cc0e1f6fc774d5b0',
     ),
     'psr/container' => 
     array (
@@ -102,33 +111,6 @@ private static $installed = array (
         0 => '1.0',
       ),
     ),
-    'psr/http-server-handler' => 
-    array (
-      'pretty_version' => '1.0.1',
-      'version' => '1.0.1.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => 'aff2f80e33b7f026ec96bb42f63242dc50ffcae7',
-    ),
-    'psr/http-server-middleware' => 
-    array (
-      'pretty_version' => '1.0.1',
-      'version' => '1.0.1.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => '2296f45510945530b9dceb8bcedb5cb84d40c5f5',
-    ),
-    'psr/log' => 
-    array (
-      'pretty_version' => '1.1.3',
-      'version' => '1.1.3.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => '0f73288fd15629204f9d42b7055f72dacbe811fc',
-    ),
     'ralouphie/getallheaders' => 
     array (
       'pretty_version' => '3.0.3',
@@ -149,12 +131,12 @@ private static $installed = array (
     ),
     'slim/slim' => 
     array (
-      'pretty_version' => '4.7.1',
-      'version' => '4.7.1.0',
+      'pretty_version' => '3.12.3',
+      'version' => '3.12.3.0',
       'aliases' => 
       array (
       ),
-      'reference' => '0905e0775f8c1cfb3bbcfabeb6588dcfd8b82d3f',
+      'reference' => '1c9318a84ffb890900901136d620b4f03a59da38',
     ),
     'symfony/polyfill-php80' => 
     array (
